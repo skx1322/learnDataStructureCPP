@@ -45,7 +45,7 @@ void Display(int input[][3])
     };
 };
 
-void GetInput(int input[][3], int currentPlayer)
+void GetInput(int input[][3], int currentPlayer) // set input function here,
 {
     int choice; // choice 0 is skip, choice 1 is set
     char playerSymbol = (currentPlayer == 1) ? 'O' : 'X';
@@ -59,29 +59,29 @@ void GetInput(int input[][3], int currentPlayer)
 
             cout << "\n>> Current Cell: [" << row + 1 << ", " << col + 1 << "]: ";
 
-            if (!(cin >> choice))
+            if (!(cin >> choice)) // input here
             {
-                cout << "Invalid input! Please enter 0 or 1." << endl;
-                cin.clear();
-                continue;
+                cin.clear();  // for sanitizing, reset when error input
+                cin.ignore(); // for sanitizing, if i were to input text or char, it'll loop-error without cin.ignore() function;
+                continue; // if no issue, just continue
             }
 
             if (choice == 1)
             {
                 input[row][col] = currentPlayer;
-                cout << "Move made at [" << row + 1 << ", " << col + 1 << "]." << endl;
+                cout << "Choice Made: [" << row + 1 << ", " << col + 1 << "]." << endl;
                 return;
             }
 
             else if (choice == 0)
             {
-                cout << "Skipping cell [" << row + 1 << ", " << col + 1 << "]." << endl;
+                cout << "Current Cell: [" << row + 1 << ", " << col + 1 << "]." << endl;
                 Display(input);
             }
 
             else
             {
-                cout << "Invalid choice. Enter 1 to select or 0 to skip." << endl;
+                cout << "Invalid choice error." << endl;
                 Display(input);
             }
         }
@@ -177,7 +177,7 @@ void CheckWinner(int input[][3]) // this is the main logic house to determine th
             {
                 if (input[i][j] == 0) // check if there's any 0 aka empty space left in the board
                 {
-                    boardFull = false; 
+                    boardFull = false;
                 }
             };
             if (!boardFull) // if false for our boardFull, then we go for another round
