@@ -7,7 +7,7 @@ int currentPlayer = 1;    // in the system, 1 is player O and 2 is player X
 
 void Display(int input[][3])
 {
-    cout << "Press 0 to press row/column, Press 1 to set your choice.";
+    cout << "Press Any Integer to skip row/column, Press 1 to set your choice.";
     if (currentPlayer == 1)
     {
         cout << "O turns!" << endl;
