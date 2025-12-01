@@ -25,24 +25,25 @@ bool leapYearCheck(int year)
 
 int dayFinder(int month, int year)
 {
-    if (month == 1 || month == 3 || month = 5 || month == 7 || month == 10 || month == 12)
+    const int day_month[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if (month < 1 || month > 12)
     {
-        return 31;
-    }
-    if (month == 4 || month == 6 || month = 7 || month == 8 || month == 9 || month == 11)
-    {
-        return 30;
-    }
+        throw new range_error("Month can't be less than 1 or more than 12");
+    };
+
     if (month == 2)
     {
         if (leapYearCheck(year))
         {
             return 29;
         }
-        return 28;
-    }
+        else
+        {
+            return 28;
+        };
+    };
 
-    throw new range_error("Month can't be less than 1 or more than 12");
+    return day_month[month - 1];
 };
 
 class CalendarMonth
@@ -218,10 +219,9 @@ void CalendarMonth::display(int firstDayOfMonth)
     {
         if (entries[i] != "")
         {
-            cout<<<"["<<currentEntry + 1 <<"] "<<entries[i]<<endl;
+            cout << "[" << currentEntry + 1 << "] " << entries[i] << endl;
             currentEntry++;
         }
-        
     }
     endl(cout);
     // End Question 3(e)
@@ -233,11 +233,11 @@ void CalendarMonth::putEntry(string text, int day)
     // Begin Question 2(a)
     // (i) Make sure the given day is valid
     // (ii) Assign the appropriate entry with text
-    if (day >= 1 && day <= numOfDays);
+    if (day >= 1 && day <= numOfDays)
     {
         entries[day - 1] = text;
     }
-    
+
     // End Question 2(a)
 }
 
@@ -251,10 +251,11 @@ string CalendarMonth::getEntry(int day)
     {
         return entries[day - 1];
     }
-    else {
+    else
+    {
         return "";
     }
-    
+
     // End Question 2(b)
 }
 

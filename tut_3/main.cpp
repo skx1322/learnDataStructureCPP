@@ -68,11 +68,11 @@ int main()
 {
     system("title Calendar");
 
-    //Question1();
-    //Question2();
-    //Question3();
-    //Question4();
+    Question1();
+    // Question2();
+    // Question3();
+    // Question4();
 
-    //system("pause");
+    system("pause");
     return 0;
 }
