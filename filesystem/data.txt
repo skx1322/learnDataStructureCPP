@@ -1,0 +1,6 @@
+Player:{
+    name: Nerdanta,
+    hp: 100,
+    def: 100,
+    dice: 10
+};
