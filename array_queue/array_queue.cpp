@@ -16,11 +16,11 @@ public:
     int rear;          // this is the end of queue size
     int arr[MAX_SIZE]; // setup array size
 
-    Queue() : front(-1), rear(-1) {} // constructor for front and back, default value -1 which is no value, start should be 0-1 for instance
+    Queue() : front(0), rear(-1) {} // constructor for front and back, default value -1 which is no value, start should be 0-1 for instance
 
     bool isEmpty() // if front is default value or front is bigger than rear (e.g: 2 > -1), then it's empty
     {
-        return front == -1 || front > rear;
+        return front == 0 || front > rear;
     }
 
     bool isFull() // if the rear/end is at the max size of array, then it's full
