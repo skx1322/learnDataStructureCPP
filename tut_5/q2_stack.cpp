@@ -187,7 +187,7 @@ int main()
     getline(cin, postfixExp);
 
     result = evalPostfixExpression (postfixExp);
-
+    
     cout << postfixExp << " = " << result << endl;
 
     system("pause");
