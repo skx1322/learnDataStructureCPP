@@ -11,15 +11,16 @@ void swap(int& num1, int& num2)
     num2 = temp;
 }
 
+// Bubble sorting function here
 void bubble_sort(int *numbers)
 {
     bool is_swapped;
     for (int i = 0; i < array_size; i++)
     {
         is_swapped = false;
-        for (int j = 0; j < array_size - i - 1; j++)
+        for (int j = 0; j < array_size - i - 1; j++) // minus i and 1 because we are checking two array at once
         {
-            if (numbers[j] > numbers[j + 1])
+            if (numbers[j] > numbers[j + 1]) // if current array is larger than an array ahead then they swap
             {
                 swap(numbers[j], numbers[j + 1]);
                 is_swapped = true;
