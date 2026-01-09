@@ -5,8 +5,6 @@ struct Node
 {
     int nums;
     Node *next;
-
-    Node(int val) : nums(val), next(nullptr) {}
 };
 
 class linkedList
@@ -19,9 +17,12 @@ public:
 
     void addFirst(int data)
     {
-        Node *newNode = new Node(data);
-        newNode->next = head;
-        head = newNode;
+        Node *temp = new Node;
+        temp->nums = data;
+        temp->next = nullptr;
+        
+        temp->next = head;
+        head = temp;
     }
 
     void printAll()
@@ -59,6 +60,5 @@ int main()
 
     dynamicPTR.printAll();
 
-    dynamicPTR.~linkedList();
     return 0;
 }
