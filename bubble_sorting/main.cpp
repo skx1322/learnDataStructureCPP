@@ -3,7 +3,7 @@ using namespace std;
 
 const int array_size = 10;
 
-//Swap Function, Argument integer one and integer two
+//swap Function, argument integer one and integer two
 void swap(int& num1, int& num2)
 {
     int temp = num1;
@@ -11,7 +11,7 @@ void swap(int& num1, int& num2)
     num2 = temp;
 }
 
-// Bubble sorting function here
+// bubble sorting function here
 void bubble_sort(int *numbers)
 {
     bool is_swapped;

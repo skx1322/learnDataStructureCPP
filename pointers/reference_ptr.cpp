@@ -6,11 +6,12 @@ using namespace std;
 1001 = rty;
 1002, *ptr_qwe = &qwe // 1000 so it ref 5
 1003, *ptr_qwe = &rty //  1001 so it ref 8
+
 Address | Value
 1000    | 5
 1001    | 8
-1003    | 1000 // 
-1004    | 1001 
+1003    | 1000 // if point, it'll be 5
+1004    | 1001 // if we point, it'll be back 8
 1005    |
 
 let's say int *ptr_qwe = &qwe;
@@ -43,7 +44,7 @@ int main()
     cout << "Pointer Location Value: "; // expect 1
     cout << ptr_qwe << " " << ptr_rty << endl; // now I have the memory address of qwe and rty
 
-    cout << "Pointer Location Value: ";
+    cout << "References Value Location Value: ";
     cout << *ptr_qwe << " " << *ptr_rty << endl; // now I point toward to the reference of qwe and rty
 
     ref1++;
